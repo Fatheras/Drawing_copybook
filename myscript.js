@@ -8,7 +8,7 @@ function createGrid(x) {
     $(".grid").height(960/x);
 };
 function clearGrid() {
-  $('.grid').removeClass();
+  $('.grid').remove();
 }
 function refreshGrid() {
   var z = prompt("How many boxes per side do you want?");

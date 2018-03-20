@@ -24,3 +24,55 @@
   top: 1%;
   left: 44.8%;
 }
+
+.color_boxes {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 0;
+}
+
+#black {
+  background-color: black;
+  left: 104px;
+}
+
+#grey {
+  background-color: grey;
+  left: 134px;
+}
+
+#purple {
+  background-color: purple;
+  left: 164px;
+}
+
+#indigo {
+  background-color: indigo;
+  left: 194px;
+}
+
+#blue {
+  background-color: blue;
+  left: 224px;
+}
+
+#green {
+  background-color: green;
+  left: 254px;
+}
+
+#yellow {
+  background-color: yellow;
+  left: 284px;
+}
+
+#orange {
+  background-color: orange;
+  left: 314px;
+}
+
+#red {
+  background-color: red;
+  left: 344px;
+}
