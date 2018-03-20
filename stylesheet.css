@@ -1,18 +1,26 @@
 #container {
-	position: relative;
-	top: 30px;
-	outline:2px solid #000;
-	font-size: 0;
-	margin:auto;
-	height:960px;
-	width:960px;
-	padding: 0;
-	border: none;
+  position: relative;
+  top: 30px;
+  outline: 2px solid #000;
+  font-size: 0;
+  margin: auto;
+  height: 960px;
+  width: 960px;
+  padding: 0;
+  border: none;
 }
+
 .grid {
-	margin:0;
-	padding:0;
-	border:none;
-	outline:1px solid #000;
-	display:inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 1px solid #000;
+  display: inline-block;
+}
+
+#newGrid {
+  position: absolute;
+  font-size: 15px;
+  top: 1%;
+  left: 44.8%;
 }

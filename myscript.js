@@ -1,4 +1,3 @@
-// function that builds a grid in the "container"
 function createGrid(x) {
     for (var rows = 0; rows < x; rows++) {
         for (var columns = 0; columns < x; columns++) {
@@ -8,6 +7,17 @@ function createGrid(x) {
     $(".grid").width(960/x);
     $(".grid").height(960/x);
 };
+function clearGrid() {
+  $('.grid').removeClass();
+}
+function refreshGrid() {
+  var z = prompt("How many boxes per side do you want?");
+  clearGrid();
+  createGrid(z);
+}
 $(document).ready(function() {
     createGrid(16);
+    $('#newGrid').click(function() {
+      refreshGrid();
+    });
     });
