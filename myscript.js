@@ -1,3 +1,5 @@
+var counter = 0;
+
 function createGrid(x) {
   for (var rows = 0; rows < x; rows++) {
     for (var columns = 0; columns < x; columns++) {
@@ -12,20 +14,39 @@ function clearGrid() {
   $('.grid').remove();
 }
 
-function refreshGrid() {
+function createNewGrid() {
+  console.log(counter);
   var z = prompt("How many boxes per side do you want?");
-  clearGrid();
+  if (counter > 0) {
+    clearGrid();
+  }
   createGrid(z);
+  setCurrentColor();
+  setColorToGridBox();
+}
+
+function bindRefreshToDiv() {
+  $('#newGrid').click(function() {
+    createNewGrid();
+  });
+}
+
+function setCurrentColor() {
+  $('.colorBoxes').click(function() {
+    var containerForBackgroundColor = $(this).css('background-color');
+    document.getElementById("currentColor").style.backgroundColor = containerForBackgroundColor;
+  });
+}
+
+function setColorToGridBox() {
+  $('.grid').click(function() {
+    var containerForCurrentColor = $('#currentColor').css('background-color');
+    $(this).css('background-color', containerForCurrentColor);
+  });
 }
 
 $(document).ready(function() {
-  createGrid(16);
-  $('#newGrid').click(function() {
-    refreshGrid();
-  });
-  $('.colorBoxes').click(function() {
-    var containerForBackgroundColor = $(this).css('background-color');
-    //console.log(containerForBackgroundColor);
-    document.getElementById("currentColor").style.backgroundColor=containerForBackgroundColor;
-  });
+  bindRefreshToDiv();
+  counter++;
+  createNewGrid();
 });
