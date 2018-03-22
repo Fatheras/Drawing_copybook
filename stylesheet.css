@@ -25,11 +25,17 @@
   left: 44.8%;
 }
 
-.color_boxes {
+.colorBoxes {
   height: 30px;
   width: 30px;
   position: absolute;
   top: 0;
+}
+
+#currentColor {
+  border-style: solid;
+  border-color: black;
+  right: 1px;
 }
 
 #black {
