@@ -25,6 +25,7 @@ function checkForInputValue(boxesPerSide) {
 
 function createNewGrid() {
   var numberOfBoxes = prompt("How many boxes per side do you want?");
+  console.log(numberOfBoxes);
   var IsCorrect = checkForInputValue(numberOfBoxes);
   if (IsCorrect === true) {
     createGrid(numberOfBoxes);
