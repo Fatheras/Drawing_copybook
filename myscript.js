@@ -12,23 +12,14 @@ function clearGrid() {
   $('.grid').remove();
 }
 
-/*function checkForInputValue(x) {
-  typeOfInputValue = isNaN(x);
-  if (typeOfInputValue == true)
-    alert("Input correct value");
-  else if (x % 1 !== 0 & counter === 1) {
-    clearGrid(); //чистит и опять создает или че??????
-    alert("Input correct value");
-  } */
+
 function checkForInputValue(boxesPerSide) {
-  var isNumber = isNaN(boxesPerSide);
-  if (isNumber === true)
+  var floatContainer = Number.parseFloat(boxesPerSide);
+  var x = Number.isInteger(floatContainer);
+  if (x === false) {
     return false;
-  else if (boxesPerSide % 1 !== 0 & $('.grid').length > 0) {
-    return false;
-  } else {
-    return true
   }
+  return true;
 }
 
 
@@ -36,21 +27,20 @@ function createNewGrid() {
   var numberOfBoxes = prompt("How many boxes per side do you want?");
   var IsCorrect = checkForInputValue(numberOfBoxes);
   if (IsCorrect === true) {
-    //createGrid(numberOfBoxes);
-  } else {
+    createGrid(numberOfBoxes);
+  }
+  if (IsCorrect === false) {
     alert("Input correct value");
   }
-  if ($('.grid').length > 0) {
-    console.log("true"); //хай пока будет
-    clearGrid();
-  }
-  createGrid(numberOfBoxes);
   setCurrentColor();
   setColorToGridBox();
 }
 
-function bindRefreshToDiv() {
+function bindRefreshToButton() {
   $('#newGrid').click(function() {
+    if ($('.grid').length > 0) {
+      clearGrid();
+    }
     createNewGrid();
   });
 }
@@ -70,6 +60,6 @@ function setColorToGridBox() {
 }
 
 $(document).ready(function() {
-  bindRefreshToDiv();
+  bindRefreshToButton();
   createNewGrid();
 });
