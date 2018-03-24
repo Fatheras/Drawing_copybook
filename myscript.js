@@ -1,5 +1,3 @@
-var counter = 0;
-
 function createGrid(boxesPerSide) {
   for (var rows = 0; rows < boxesPerSide; rows++) {
     for (var columns = 0; columns < boxesPerSide; columns++) {
@@ -26,10 +24,9 @@ function checkForInputValue(boxesPerSide) {
   var isNumber = isNaN(boxesPerSide);
   if (isNumber === true)
     return false;
-  else if (boxesPerSide % 1 !== 0 & counter === 1) {
+  else if (boxesPerSide % 1 !== 0 & $('.grid').length > 0) {
     return false;
-  }
-  else {
+  } else {
     return true
   }
 }
@@ -40,11 +37,10 @@ function createNewGrid() {
   var IsCorrect = checkForInputValue(numberOfBoxes);
   if (IsCorrect === true) {
     //createGrid(numberOfBoxes);
-  }
-  else {
+  } else {
     alert("Input correct value");
   }
-  if ('.grid' in document || counter === 1) {
+  if ($('.grid').length > 0) {
     console.log("true"); //хай пока будет
     clearGrid();
   }
@@ -76,5 +72,4 @@ function setColorToGridBox() {
 $(document).ready(function() {
   bindRefreshToDiv();
   createNewGrid();
-  counter++;
 });
